@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Login from './pages/Login';
+import About from './pages/About'
+import Error from './pages/Error';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1 className="bg-slate-600 text-red-700">
-     klashfklasdf
-    </h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='about' element={<About/>}/>
+      <Route path='login' element={<Login/>}/>
+      <Route path='*' element={<Error/>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
